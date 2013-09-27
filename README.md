@@ -4,12 +4,12 @@ buster-ramp-error
 Sample vagrant box for reproducing buster (0.7.6 Beta 5)  bug 375
 
 
-=== Preconditions
+### Preconditions
 - Vagrant
 - VirtualBox
 - Ansible
 
-=== Reproduce error
+### Reproduce error
 1. `vagrant up` - May take a while...
 2. `vagrant ssh`
 3. `cd /vagrant/sample`
