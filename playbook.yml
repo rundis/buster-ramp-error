@@ -1,0 +1,17 @@
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: Hent ekstra pakkerepo installasjon (EPEL)
+      get_url: dest=/tmp/epel-release.rpm  url=http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+
+    - name: Installer EPEL repo
+      yum: pkg=/tmp/epel-release.rpm state=installed
+
+    - name: Installer node/npm
+      yum: pkg=npm state=installed
+
+    - name: Install busterjs
+      npm: name=buster global=yes state=present
+
+    - name: Install phantomjs
+      npm: name=phantomjs global=yes state=present
